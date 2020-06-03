@@ -8,4 +8,16 @@ class Pokemon
     @id = id 
     @db = db
   end 
+  
+  def save
+    if self.id 
+      self.update
+    else 
+      sql = <<-SQL 
+        INSERT INTO pokemon (
+          name TEXT, 
+          type TEXT);
+        VALUES (?, ?)
+      SQL
+      
 end
