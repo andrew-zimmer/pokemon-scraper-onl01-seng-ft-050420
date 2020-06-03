@@ -12,10 +12,6 @@ class Pokemon
     @@all << self
   end 
   
-  def self.all 
-    @@all 
-  end 
-  
   def self.save(name, type, db)
     pk = self.all.find{|obj| obj.name == name}
     sql = <<-SQL 
