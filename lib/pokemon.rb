@@ -31,3 +31,5 @@ class Pokemon
     SQL
     @db.execute(sql, self.name, self.type, self.id)
   end 
+  
+end 
