@@ -31,7 +31,7 @@ class Pokemon
       SELECT * FROM pokemon 
       WHERE id = ? 
     SQL
-    db.execute(sql, id).collect {|row| self.new(id:row[0], name:row[1], type:row[2], db:db)}[0]
+    db.execute(sql, id).collect {|row| self.new(id:row[0], name:row[1], type:row[2], db:db)}.flatten
   end 
   
   def update
