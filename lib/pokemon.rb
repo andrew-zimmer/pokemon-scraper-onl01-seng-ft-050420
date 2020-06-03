@@ -22,8 +22,8 @@ class Pokemon
       INSERT INTO pokemon (name, type)
       VALUES (?,?)
     SQL
-    @db.execute(sql, pk.name, pk.type)
-    @id = @db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+    db.execute(sql, pk.name, pk.type)
+    @id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
   
   def update
