@@ -17,7 +17,7 @@ class Pokemon
   end 
   
   def self.save(name, type, db)
-    pk = self.all.find{|obj| obj.name == name)
+    pk = self.all.find{|obj| obj.name == name}
     sql = <<-SQL 
       INSERT INTO pokemon (name, type)
       VALUES (?,?)
