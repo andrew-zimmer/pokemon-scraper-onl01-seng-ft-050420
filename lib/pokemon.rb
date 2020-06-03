@@ -19,5 +19,15 @@ class Pokemon
           type TEXT);
         VALUES (?, ?)
       SQL
-      
-end
+      @db.execute(sql, self.name, self.type)
+      @id = @db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+    end 
+  end
+  
+  def update
+    sql = <<-SQL
+      UPDATE pokemon SET name = ?, type = ?
+      WHERE id = ? 
+    SQL
+    @db.execute(sql, self.name, self.type, self.id)
+  end 
